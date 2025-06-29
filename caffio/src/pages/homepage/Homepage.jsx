@@ -1,9 +1,10 @@
+
 import React, { useState, useEffect } from 'react';
 
 const backgroundImages = [
-  'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80',
-  'https://images.unsplash.com/photo-1447933601403-0c6688de566e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80',
-  'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80'
+  'image/welcome1.png',
+  'image/welcome2.png',
+  'image/welcome3.png',
 ];
 
 const Welcome = () => {
@@ -21,14 +22,14 @@ const Welcome = () => {
   const handleMouseMove = (e) => {
     const { clientX, clientY } = e;
     setCursorPos({
-      x: clientX - window.innerWidth / 2,
-      y: clientY - window.innerHeight / 2
+      x: clientX - window.innerWidth / 2, 
+      y: clientY - window.innerHeight / 2 
     });
   };
 
   return (
     <section
-      className="h-screen w-screen fixed inset-0 overflow-hidden bg-gradient-to-br from-gray-900 via-amber-900 to-black"
+      className="min-h-screen w-screen relative overflow-hidden bg-gradient-to-br from-gray-900 via-amber-900 to-black"
       onMouseMove={handleMouseMove}
     >
       <div className="absolute inset-0">
@@ -36,7 +37,7 @@ const Welcome = () => {
           <div
             key={idx}
             className={`absolute inset-0 bg-cover bg-center transition-all duration-1000 ${
-              idx === activeSlide ? 'opacity-100 scale-100' : 'opacity-0 scale-110'
+              idx === activeSlide ? 'opacity-100 scale-100' : 'opacity-0 scale-100'
             }`}
             style={{
               backgroundImage: `url(${imagePath})`,
@@ -44,17 +45,17 @@ const Welcome = () => {
             }}
           />
         ))}
-  
+
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-transparent to-amber-900/60" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-amber-900/20 to-black/60" />
       </div>
-      <div className="relative z-10 h-full flex items-center justify-center px-6">
+      <div className="relative z-10 h-full flex items-center justify-center px-5">
         <div className="text-center max-w-5xl">
 
-          <div className="mb-8 relative">
+          <div className="mb-7 relative">
             <div className="w-24 h-24 mx-auto bg-gradient-to-br from-amber-400 to-orange-500 rounded-full flex items-center justify-center shadow-2xl transform hover:scale-110 transition-transform duration-300">
-              <coffee className="text-3xl">☕</coffee>
+              <span className="text-3xl" role="img" aria-label="coffee">☕</span> 
             </div>
             <div className="absolute inset-0 w-24 h-24 mx-auto border-2 border-amber-400 rounded-full animate-ping opacity-20" />
           </div>
@@ -100,7 +101,7 @@ const Welcome = () => {
               </span>
             </button>
 
-             <button
+            <button
               className="group relative px-10 py-4 bg-gradient-to-r from-amber-500 to-orange-600 text-white font-bold text-xl rounded-full shadow-2xl hover:shadow-amber-500/50 transform hover:scale-105 transition-all duration-300 overflow-hidden"
               onClick={() => alert('Gallery clicked!')}
             >

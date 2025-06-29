@@ -66,7 +66,7 @@ const SignUp = () => {
 
             <div>
               <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-1">
-                First Name
+                First_Name
               </label>
               <input
                 id="firstName"
@@ -84,7 +84,7 @@ const SignUp = () => {
             </div>
             <div>
               <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-1">
-                Last Name
+                Last_Name
               </label>
               <input
                 id="lastName"
@@ -103,7 +103,7 @@ const SignUp = () => {
           </div>
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-              Email Address
+              Email_Address
             </label>
             <input
               id="email"
